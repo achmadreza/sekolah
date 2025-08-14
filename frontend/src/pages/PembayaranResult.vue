@@ -291,7 +291,7 @@ export default {
       return "";
     },
     getData() {
-      axios.get("http://localhost:3000/pembayaran")
+      axios.get("http://localhost:3000/api/pembayaran")
         .then(res => this.pembayaranList = res.data)
         .catch(err => console.error(err));
     },
@@ -360,7 +360,7 @@ const payload = {
   jumlah: Number(this.form.jumlah),   // wajib
   status: this.form.status || "Belum Lunas" // default
 };
-  axios.post("http://localhost:3000/pembayaran", payload)
+  axios.post("http://localhost:3000/api/pembayaran", payload)
     .then(() => {
       alert("Pembayaran berhasil ditambahkan");
       this.addModalInstance.hide();
@@ -388,7 +388,7 @@ submitEdit() {
     status: this.form.status
   };
 
-  axios.put(`http://localhost:3000/pembayaran/${this.form.id_pembayaran}`, payload)
+  axios.put(`http://localhost:3000/api/pembayaran/${this.form.id_pembayaran}`, payload)
     .then(() => {
       alert("Pembayaran berhasil diupdate");
       this.editModalInstance.hide();
@@ -402,7 +402,7 @@ submitEdit() {
 
 deletePayment(id_siswa) {
      if (confirm("Yakin ingin menghapus siswa ini beserta semua pembayarannya?")) {
-    axios.delete(`http://localhost:3000/siswa/${id_siswa}`)
+    axios.delete(`http://localhost:3000/api/siswa/${id_siswa}`)
       .then(() => {
         alert("Siswa dan pembayaran terkait berhasil dihapus");
         this.getData();
@@ -445,7 +445,7 @@ deletePayment(id_siswa) {
  
   deletePayment(id) {
       if (confirm("Yakin ingin menghapus pembayaran ini?")) {
-        axios.delete(`http://localhost:3000/pembayaran/${id}`)
+        axios.delete(`http://localhost:3000/api/pembayaran/${id}`)
           .then(() => {
             alert("Pembayaran berhasil dihapus");
             this.getData();

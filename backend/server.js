@@ -7,8 +7,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/siswa', siswaRoutes);
-app.use('/pembayaran', pembayaranRoutes);
+app.use('/api/siswa', siswaRoutes);
+app.use('/api/pembayaran', pembayaranRoutes);
 
 
 const PORT = 3000;

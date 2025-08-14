@@ -139,7 +139,7 @@ export default {
     async submitForm() {
       try {
         // 1️⃣ Insert siswa
-        const siswaRes = await axios.post("http://localhost:3000/siswa", {
+        const siswaRes = await axios.post("http://localhost:3000/api/siswa", {
           nomor_induk: this.form.noInduk,
           nama_siswa: this.form.nama,
           tanggal_lahir: this.form.tanggalLahir,
@@ -152,7 +152,7 @@ export default {
         const id_siswa = siswaRes.data.id_siswa;
 
         // 2️⃣ Insert pembayaran
-   await axios.post("http://localhost:3000/pembayaran", {
+   await axios.post("http://localhost:3000/api/pembayaran", {
   id_siswa,
   jenis_pembayaran: this.form.jenisPembayaran,
   bulan: this.form.bulan,
