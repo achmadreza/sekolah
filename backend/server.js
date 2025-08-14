@@ -10,8 +10,8 @@ app.use(express.json());
 app.use('/api/siswa', siswaRoutes);
 app.use('/api/pembayaran', pembayaranRoutes);
 
-
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server berjalan di http://localhost:${PORT}`);
-});
+export default app;
+// const PORT = 3000;
+// app.listen(PORT, () => {
+//   console.log(`🚀 Server berjalan di http://localhost:${PORT}`);
+// });
